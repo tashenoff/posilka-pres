@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Архитектура проекта</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+        <!-- Навигационное меню -->
+  <nav class="bg-gray-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold">posilka.kz</div>
+      <div class="hidden md:flex space-x-4">
+        <a href="/" class="hover:text-gray-400">Архитектура проекта</a>
+        <a href="roles.html" class="hover:text-gray-400">Роли и логика</a>
+        <a href="steps.html" class="hover:text-gray-400">Шаги по разработке</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-gray-800">
+      <a href="/" class="block px-4 py-2 hover:bg-gray-700">Архитектура проекта</a>
+      <a href="roles.html" class="block px-4 py-2 hover:bg-gray-700">Роли и логика</a>
+      <a href="steps.html" class="block px-4 py-2 hover:bg-gray-700">Шаги по разработке</a>
+    </div>
+  </nav>
+
+  <!-- Архитектура проекта -->
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6">Архитектура проекта</h1>
+    
+    <!-- Клиентское приложение -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Клиентское приложение (React Native/Flutter)</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Клиенты -->
+        <div class="border border-gray-700 p-4 rounded-lg">
+          <h3 class="text-xl font-medium mb-3">Клиенты:</h3>
+          <ul class="list-disc ml-6">
+            <li>Создание заказа</li>
+            <li>Отслеживание заказа</li>
+            <li>Чат с поддержкой</li>
+          </ul>
+        </div>
+        
+        <!-- Курьеры -->
+        <div class="border border-gray-700 p-4 rounded-lg">
+          <h3 class="text-xl font-medium mb-3">Курьеры:</h3>
+          <ul class="list-disc ml-6">
+            <li>Получение заказов</li>
+            <li>Маршрутизация (API карт)</li>
+            <li>Обновление статуса заказов</li>
+            <li>Чат с поддержкой</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Панель оператора -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Панель оператора (Next.js)</h2>
+      <ul class="list-disc ml-6">
+        <li>Вход для операторов</li>
+        <li>Список заказов</li>
+        <li>Распределение заказов между курьерами</li>
+        <li>Чат с клиентами и курьерами</li>
+      </ul>
+    </div>
+
+    <!-- Бэкенд -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Бэкенд (Node.js)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- API -->
+        <div class="border border-gray-700 p-4 rounded-lg">
+          <h3 class="text-xl font-medium mb-3">API (Express):</h3>
+          <ul class="list-disc ml-6">
+            <li>Управление пользователями</li>
+            <li>Создание/обновление заказов</li>
+            <li>Маршрутизация курьеров</li>
+          </ul>
+        </div>
+
+        <!-- Чат -->
+        <div class="border border-gray-700 p-4 rounded-lg">
+          <h3 class="text-xl font-medium mb-3">Чат (Socket.io/WebRTC):</h3>
+          <ul class="list-disc ml-6">
+            <li>Реальное время</li>
+            <li>Поддержка общения между ролями</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- База данных -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">База данных (PostgreSQL/MongoDB)</h2>
+      <ul class="list-disc ml-6">
+        <li>Хранение информации о пользователях</li>
+        <li>Заказы</li>
+        <li>Сообщения (для чата)</li>
+      </ul>
+    </div>
+
+    <!-- Push-уведомления -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Push-уведомления (Firebase Cloud Messaging)</h2>
+      <ul class="list-disc ml-6">
+        <li>Уведомления клиентам о статусе заказов</li>
+        <li>Уведомления курьерам о новых заказах</li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шаги по разработке</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Навигационное меню -->
+  <nav class="bg-gray-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold">posilka.kz</div>
+      <div class="hidden md:flex space-x-4">
+        <a href="/" class="hover:text-gray-400">Архитектура проекта</a>
+        <a href="roles.html" class="hover:text-gray-400">Роли и логика</a>
+        <a href="steps.html" class="hover:text-gray-400">Шаги по разработке</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-gray-800">
+      <a href="/" class="block px-4 py-2 hover:bg-gray-700">Архитектура проекта</a>
+      <a href="roles.html" class="block px-4 py-2 hover:bg-gray-700">Роли и логика</a>
+      <a href="steps.html" class="block px-4 py-2 hover:bg-gray-700">Шаги по разработке</a>
+    </div>
+  </nav>
+
+  <!-- Шаги по разработке -->
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6">Шаги по разработке</h1>
+
+    <!-- Шаг 1: Аутентификация -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">1. Аутентификация</h2>
+      <ul class="list-disc ml-6">
+        <li>Реализовать регистрацию и авторизацию через JWT-токены для клиентов, курьеров и операторов.</li>
+        <li>Поддержать авторизацию через телефон или email.</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 2: API для заказов -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">2. API для заказов</h2>
+      <ul class="list-disc ml-6">
+        <li>Создать бэкенд на Node.js с Express для работы с заказами.</li>
+        <li>Реализовать создание, просмотр и обновление заказов.</li>
+        <li>Создать интерфейс для оператора, который сможет распределять заказы между курьерами.</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 3: Интерфейс оператора -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">3. Интерфейс оператора</h2>
+      <ul class="list-disc ml-6">
+        <li>Создать веб-интерфейс для оператора на React или Next.js.</li>
+        <li>Отображение всех активных заказов и доступных курьеров.</li>
+        <li>Функциональность для назначения курьеров на заказы и изменения статусов заказов.</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 4: Реализация чата -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">4. Реализация чата</h2>
+      <ul class="list-disc ml-6">
+        <li>Реализовать чат для клиентов и курьеров с оператором с использованием WebSocket (Socket.io).</li>
+        <li>Поддержка обмена сообщениями в реальном времени для решения вопросов.</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 5: Уведомления -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">5. Уведомления</h2>
+      <ul class="list-disc ml-6">
+        <li>Интегрировать Firebase для отправки push-уведомлений курьерам о новых заказах.</li>
+        <li>Уведомления для клиентов о статусе их заказа (принят, в пути, доставлен).</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 6: Интерфейс курьера -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">6. Интерфейс курьера</h2>
+      <ul class="list-disc ml-6">
+        <li>Создать интерфейс для курьеров на React Native или Flutter.</li>
+        <li>Реализовать интеграцию с картографическим API (например, Google Maps API) для маршрутизации заказов.</li>
+        <li>Добавить возможность обновления статуса заказа (забрал, доставил).</li>
+      </ul>
+    </div>
+
+    <!-- Шаг 7: Тестирование и деплой -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">7. Тестирование и деплой</h2>
+      <ul class="list-disc ml-6">
+        <li>Написать тесты для API и компонентов фронтенда.</li>
+        <li>Провести тестирование на различных устройствах (мобильных и веб).</li>
+        <li>Деплоить бэкенд на платформу вроде Heroku, AWS или другой облачный сервис.</li>
+        <li>Использовать Firebase или App Store/Google Play для деплоя мобильных приложений.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
+
+</html>

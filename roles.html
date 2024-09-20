@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Роли и логика приложения</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Навигационное меню -->
+    <nav class="bg-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div class="text-xl font-bold">posilka.kz</div>
+          <div class="hidden md:flex space-x-4">
+            <a href="/" class="hover:text-gray-400">Архитектура проекта</a>
+            <a href="roles.html" class="hover:text-gray-400">Роли и логика</a>
+            <a href="steps.html" class="hover:text-gray-400">Шаги по разработке</a>
+          </div>
+          <div class="md:hidden">
+            <button id="menu-toggle" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div id="menu" class="hidden md:hidden bg-gray-800">
+          <a href="/" class="block px-4 py-2 hover:bg-gray-700">Архитектура проекта</a>
+          <a href="roles.html" class="block px-4 py-2 hover:bg-gray-700">Роли и логика</a>
+          <a href="steps.html" class="block px-4 py-2 hover:bg-gray-700">Шаги по разработке</a>
+        </div>
+      </nav>
+  <!-- Роли и логика приложения -->
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6 text-white">Роли и логика приложения</h1>
+
+    <!-- Клиенты -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-white">Клиенты</h2>
+      <ul class="list-disc ml-6 text-gray-300">
+        <li>Регистрация и авторизация через телефон или email.</li>
+        <li>Создание заказа с указанием адреса доставки.</li>
+        <li>Отслеживание текущего статуса заказа (обрабатывается, в пути, доставлен).</li>
+        <li>Чат с поддержкой для решения вопросов.</li>
+      </ul>
+    </div>
+
+    <!-- Операторы -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-white">Операторы</h2>
+      <ul class="list-disc ml-6 text-gray-300">
+        <li>Прием заказов, поступивших от клиентов.</li>
+        <li>Распределение заказов между курьерами (в зависимости от их статуса: доступен/недоступен).</li>
+        <li>Чат с клиентами и курьерами для оперативного решения вопросов.</li>
+        <li>Мониторинг статусов заказов в реальном времени.</li>
+      </ul>
+    </div>
+
+    <!-- Курьеры -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-white">Курьеры</h2>
+      <ul class="list-disc ml-6 text-gray-300">
+        <li>Регистрация и авторизация через мобильное приложение.</li>
+        <li>Получение назначенных заказов с указанием маршрута.</li>
+        <li>Обновление статуса заказов (забрал, в пути, доставил).</li>
+        <li>Чат с поддержкой для решения логистических вопросов.</li>
+        <li>Возможность отметки статуса "доступен/недоступен" для получения новых заказов.</li>
+      </ul>
+    </div>
+
+    <!-- Поддержка -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-white">Поддержка</h2>
+      <ul class="list-disc ml-6 text-gray-300">
+        <li>Обработка запросов клиентов и курьеров через чат.</li>
+        <li>Решение оперативных вопросов, связанных с доставкой.</li>
+        <li>Передача информации операторам для внесения изменений в заказы.</li>
+      </ul>
+    </div>
+
+    <!-- Логика приложения -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-white">Логика приложения</h2>
+      <ul class="list-disc ml-6 text-gray-300">
+        <li>Клиенты создают заказы, которые обрабатываются операторами и распределяются между курьерами.</li>
+        <li>Операторы могут видеть доступных курьеров и их статусы в реальном времени.</li>
+        <li>Курьеры получают уведомления о новых заказах и обновляют статусы.</li>
+        <li>Все взаимодействия (клиенты, курьеры, поддержка) происходят через встроенный чат с поддержкой WebSocket или WebRTC.</li>
+        <li>Поддержка помогает решить оперативные вопросы в процессе доставки, связываясь с клиентами и курьерами.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
